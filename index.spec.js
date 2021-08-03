@@ -1,4 +1,4 @@
-const { parse, stringify } = require('./');
+const { parse, stringify } = require('./src/API/api');
 
 const testValues = [
   [1, 'I'],
@@ -18,14 +18,18 @@ const testValues = [
 ];
 
 describe('parse', () => {
-  it('should throw when not a string', () => {
+  it.only('should throw when not a string', () => {
     expect(() => parse(1)).toThrow('Not a string');
     expect(() => parse({})).toThrow('Not a string');
     expect(() => parse(new Date())).toThrow('Not a string');
   });
 
-  it('should throw when bad chars', () => {
+  it.only('should throw when bad chars', () => {
     expect(() => parse('IG')).toThrow('Unknown roman numeral');
+  });
+
+  it.only('should throw when bad chars', () => {
+    expect(() => parse('i')).not.toThrow('Unknown roman numeral');
   });
 
   it('should throw when repetitions of number starting with 5', () => {
