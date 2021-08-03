@@ -2,9 +2,36 @@
   "name": "roman-numerals",
   "version": "1.0.0",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node src/API/api.js"
   },
   "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
     "jest": "^27.0.6"
+  },
+  "description": "Módulo de JavaScript (instalable via npm) que permita al usuario converir números arábigos en números romanos y viceversa.",
+  "main": "index.js",
+  "bin": {
+    "roman-numerals": "src/CLI/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DianaCato/REG003-roman-numerals.git"
+  },
+  "keywords": [
+    "npm",
+    "javascript"
+  ],
+  "author": "Diana & Milumon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DianaCato/REG003-roman-numerals/issues"
+  },
+  "homepage": "https://github.com/DianaCato/REG003-roman-numerals#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^8.1.0"
   }
 }
