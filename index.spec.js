@@ -33,7 +33,7 @@ describe('parse', () => {
   });
 
   it.only('should throw when repetitions of number starting with 5', () => {
-    expect(() => parse('LL')).toThrow('Invalid repetition of number starting with 5: L (50)');
+    expect(() => parse('LL')).toThrow('Invalid repetition of number starting with 5: V (5), L (50), D (500)');
   });
 
   it('should throw when too many repetitions', () => {
