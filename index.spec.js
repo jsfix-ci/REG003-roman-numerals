@@ -28,11 +28,11 @@ describe('parse', () => {
     expect(() => parse('IG')).toThrow('Unknown roman numeral');
   });
 
-  it.only('should throw when bad chars', () => {
+  it.only('should not throw when receive lower cases chars', () => {
     expect(() => parse('i')).not.toThrow('Unknown roman numeral');
   });
 
-  it('should throw when repetitions of number starting with 5', () => {
+  it.only('should throw when repetitions of number starting with 5', () => {
     expect(() => parse('LL')).toThrow('Invalid repetition of number starting with 5: L (50)');
   });
 
