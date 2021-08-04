@@ -18,30 +18,30 @@ const testValues = [
 ];
 
 describe('parse', () => {
-  it.only('should throw when not a string', () => {
+  it('should throw when not a string', () => {
     expect(() => parse(1)).toThrow('Not a string');
     expect(() => parse({})).toThrow('Not a string');
     expect(() => parse(new Date())).toThrow('Not a string');
   });
 
-  it.only('should throw when bad chars', () => {
+  it('should throw when bad chars', () => {
     expect(() => parse('IG')).toThrow('Unknown roman numeral');
   });
 
-  it.only('should not throw when receive lower cases chars', () => {
+  it('should not throw when receive lower cases chars', () => {
     expect(() => parse('i')).not.toThrow('Unknown roman numeral');
   });
 
-  it.only('should throw when repetitions of number starting with 5', () => {
+  it('should throw when repetitions of number starting with 5', () => {
     expect(() => parse('LL')).toThrow('Invalid repetition of number starting with 5: V (5), L (50), D (500)');
   });
 
-  it.only('should throw when too many repetitions', () => {
+  it('should throw when too many repetitions', () => {
     expect(() => parse('IIII')).toThrow('Too many repetitions of roman numeral I, X, C, M');
   });
 
-  it.only('should throw when invalid substraction prefix (must be 1 or multiple of 10)', () => {
-    expect(() => parse('VX')).toThrow('Invalid substraction prefix V');
+  it('should throw when invalid substraction prefix (must be 1 or multiple of 10)', () => {
+    expect(() => parse('VX')).toThrow('Invalid substraction prefix V, L, D');
   });
 
   it('should throw when wrong order', () => {
@@ -49,25 +49,25 @@ describe('parse', () => {
   });
 
   testValues.forEach(([expected, input]) => {
-    it(`should return ${expected} when input is ${input}`, () => {
+    it.skip(`should return ${expected} when input is ${input}`, () => {
       expect(parse(input)).toBe(expected);
     });
   });
 });
 
 describe('stringify', () => {
-  it('should throw when input not a number', () => {
+  it.skip('should throw when input not a number', () => {
     expect(() => stringify('OMG')).toThrow('Not a number');
     expect(() => stringify([])).toThrow('Not a number');
   });
 
-  it('should throw when input out of range', () => {
+  it.skip('should throw when input out of range', () => {
     expect(() => stringify(-1)).toThrow('out of range');
     expect(() => stringify(4000)).toThrow('out of range');
   });
 
   testValues.forEach(([input, expected]) => {
-    it(`should return ${expected} when input is ${input}`, () => {
+    it.skip(`should return ${expected} when input is ${input}`, () => {
       expect(stringify(input)).toBe(expected);
     });
   });
