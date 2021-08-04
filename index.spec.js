@@ -36,11 +36,11 @@ describe('parse', () => {
     expect(() => parse('LL')).toThrow('Invalid repetition of number starting with 5: V (5), L (50), D (500)');
   });
 
-  it('should throw when too many repetitions', () => {
-    expect(() => parse('IIII')).toThrow('Too many repetitions of roman numeral I');
+  it.only('should throw when too many repetitions', () => {
+    expect(() => parse('IIII')).toThrow('Too many repetitions of roman numeral I, X, C, M');
   });
 
-  it('should throw when invalid substraction prefix (must be 1 or multiple of 10)', () => {
+  it.only('should throw when invalid substraction prefix (must be 1 or multiple of 10)', () => {
     expect(() => parse('VX')).toThrow('Invalid substraction prefix V');
   });
 
