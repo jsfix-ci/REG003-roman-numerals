@@ -1,27 +1,14 @@
 const isValidLetters = (stringRomans) => {
   const romans = ['V', 'L', 'D'];
-
   const count = romans.map((letter) => stringRomans.filter((e) => e === letter).length);
-
   const valid = count.every((n) => n < 2);
-
   return valid;
-  // const romanLettersL = stringRomans.filter((e) => (e === 'L')).length;
-  // const romanLettersV = stringRomans.filter((e) => (e === 'V')).length;
-  // const romanLettersD = stringRomans.filter((e) => (e === 'D')).length;
-  // let isValid = true;
-  // if (romanLettersD >= 2 || romanLettersV >= 2 || romanLettersL >= 2) {
-  //   isValid = false;
-  // }
-  // return isValid;
 };
 
 const isValidRepetition = (stringRomans) => {
   const romans = ['I', 'X', 'C', 'M'];
-
   const count = romans.map((letter) => stringRomans.filter((e) => e === letter).length);
   const isValid = count.every((n) => n < 4);
-
   return isValid;
 };
 
@@ -33,17 +20,17 @@ const isValidChar = (arrayLetters) => {
 
 const isValidSubstraction = (roman) => {
   const romans = ['VX', 'VL', 'VC', 'VD', 'VM', 'LC', 'LD', 'LM', 'DM'];
-  const exist = romans.map((romansa) => roman.indexOf(romansa));
+  const exist = romans.map((e) => roman.indexOf(e));
   const valid = exist.every((n) => n < 0);
-  /*   const romanFirstLetter = roman.slice(-2);
-  let isValid = true;
-  if (romanFirstLetter) {
-    isValid = romans.some((letter) => letter === romanFirstLetter);
-  } */
   return valid;
 };
-/*
-console.log('isValidSubstraction', isValidSubstraction('VX')); */
+
+const isValidPosition = (roman) => {
+  const romans = ['IIV', 'IIX', 'IL', 'IC', 'ID', 'IM', 'XXL', 'XXC', 'XD', 'XM'];
+  const exist = romans.map((e) => roman.indexOf(e));
+  const valid = exist.every((n) => n < 0);
+  return valid;
+};
 
 module.exports.parse = (roman) => {
   if (typeof roman !== 'string') {
@@ -63,6 +50,9 @@ module.exports.parse = (roman) => {
     throw new Error('Too many repetitions of roman numeral I, X, C, M');
   }
   if (!isValidSubstraction(romanCapital)) {
-    throw new Error('Invalid substraction prefix V');
+    throw new Error('Invalid substraction prefix V, L, D');
+  }
+  if (!isValidPosition(romanCapital)) {
+    throw new Error('Invalid order');
   }
 };
