@@ -1,10 +1,20 @@
 {
   "name": "roman-numerals",
   "version": "1.0.0",
+  "description": "Desarrollo de una API para convertir números arábigos en números romanos y viceversa",
   "scripts": {
-    "test": "jest"
+    "test": "jest --verbose --coverage",
+    "start": "nodemon src/parse.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Briss302/REG003-roman-numerals.git"
   },
   "devDependencies": {
+    "eslint": "^7.32.0",
     "jest": "^27.0.6"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.12"
   }
 }
