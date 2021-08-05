@@ -11,9 +11,32 @@ const characterToInteger = (value) => {
   }
 }
 
+const isValidCharacter = (arrayLetters) => {
+  const romans = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
+  const isFound = arrayLetters.every((e) => romans.includes(e));
+  return isFound;
+};
+
 const parse = (romano) => {
-  if(typeof romano != 'string') {
-    return "Not a string";
+  if (typeof romano !== 'string') {
+    throw new Error('Not a string');
+  }
+
+  // if (isValidCharacter(romano)) {
+  //   const arrayLetters = romano.split('');
+  //   const integer = arrayLetters.reduce((acc, e) => {
+  //     const current = characterToInteger(e);
+  //     const previous = characterToInteger(acc[acc.length - 1]);
+  //     if (current > previous) {
+  //       return acc + current;
+  //     } else {
+  //       return acc - current;
+  //     }
+  //   }, 0);
+  //   return integer;
+
+  if (!isValidCharacter([romano])) {
+    throw new Error('Unknown roman numeral');
   }
 
   let number = characterToInteger(romano.charAt(0));
@@ -34,7 +57,7 @@ const parse = (romano) => {
   return number;
 }
 
-console.log(parse("IIIIIIIIII"));
+// console.log(parse("G"));
 
 
 module.exports = {
