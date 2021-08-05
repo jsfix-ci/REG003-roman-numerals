@@ -1,72 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1628142051099" clover="3.2.0">
-  <project timestamp="1628142051100" name="All files">
-    <metrics statements="65" coveredstatements="59" conditionals="26" coveredconditionals="22" methods="16" coveredmethods="16" elements="107" coveredelements="97" complexity="0" loc="65" ncloc="65" packages="1" files="2" classes="2"/>
+<coverage generated="1628176993700" clover="3.2.0">
+  <project timestamp="1628176993700" name="All files">
+    <metrics statements="68" coveredstatements="62" conditionals="28" coveredconditionals="24" methods="17" coveredmethods="16" elements="113" coveredelements="102" complexity="0" loc="68" ncloc="68" packages="1" files="2" classes="2"/>
     <file name="parse.js" path="C:\Users\51947\Documents\Laboratoria-Backend\REG003-roman-numerals\src\parse.js">
-      <metrics statements="63" coveredstatements="57" conditionals="26" coveredconditionals="22" methods="15" coveredmethods="15"/>
+      <metrics statements="66" coveredstatements="60" conditionals="28" coveredconditionals="24" methods="16" coveredmethods="15"/>
       <line num="1" count="1" type="stmt"/>
-      <line num="2" count="79" type="cond" truecount="7" falsecount="1"/>
-      <line num="4" count="33" type="stmt"/>
+      <line num="2" count="96" type="cond" truecount="7" falsecount="1"/>
+      <line num="4" count="35" type="stmt"/>
       <line num="6" count="11" type="stmt"/>
-      <line num="8" count="13" type="stmt"/>
+      <line num="8" count="16" type="stmt"/>
       <line num="10" count="4" type="stmt"/>
-      <line num="12" count="6" type="stmt"/>
+      <line num="12" count="10" type="stmt"/>
       <line num="14" count="2" type="stmt"/>
-      <line num="16" count="10" type="stmt"/>
+      <line num="16" count="18" type="stmt"/>
       <line num="18" count="0" type="stmt"/>
-      <line num="23" count="1" type="stmt"/>
-      <line num="25" count="1" type="cond" truecount="1" falsecount="3"/>
-      <line num="27" count="0" type="stmt"/>
+      <line num="24" count="1" type="stmt"/>
+      <line num="26" count="1" type="cond" truecount="1" falsecount="3"/>
       <line num="28" count="0" type="stmt"/>
-      <line num="30" count="1" type="stmt"/>
+      <line num="29" count="0" type="stmt"/>
       <line num="31" count="1" type="stmt"/>
-      <line num="33" count="0" type="stmt"/>
+      <line num="32" count="1" type="stmt"/>
       <line num="34" count="0" type="stmt"/>
-      <line num="36" count="0" type="stmt"/>
-      <line num="38" count="1" type="stmt"/>
-      <line num="42" count="1" type="stmt"/>
-      <line num="43" count="19" type="stmt"/>
+      <line num="35" count="0" type="stmt"/>
+      <line num="37" count="0" type="stmt"/>
+      <line num="39" count="1" type="stmt"/>
+      <line num="43" count="1" type="stmt"/>
       <line num="44" count="19" type="stmt"/>
-      <line num="46" count="64" type="stmt"/>
-      <line num="47" count="19" type="stmt"/>
-      <line num="50" count="1" type="stmt"/>
-      <line num="51" count="18" type="stmt"/>
+      <line num="45" count="19" type="stmt"/>
+      <line num="47" count="64" type="stmt"/>
+      <line num="48" count="19" type="stmt"/>
+      <line num="51" count="1" type="stmt"/>
       <line num="52" count="18" type="stmt"/>
       <line num="53" count="18" type="stmt"/>
-      <line num="54" count="186" type="stmt"/>
-      <line num="60" count="53" type="stmt"/>
-      <line num="62" count="18" type="stmt"/>
-      <line num="63" count="54" type="cond" truecount="2" falsecount="0"/>
-      <line num="64" count="53" type="stmt"/>
-      <line num="67" count="18" type="stmt"/>
-      <line num="70" count="1" type="stmt"/>
-      <line num="71" count="17" type="stmt"/>
+      <line num="54" count="18" type="stmt"/>
+      <line num="55" count="186" type="stmt"/>
+      <line num="61" count="53" type="stmt"/>
+      <line num="63" count="18" type="stmt"/>
+      <line num="64" count="54" type="cond" truecount="2" falsecount="0"/>
+      <line num="65" count="53" type="stmt"/>
+      <line num="68" count="18" type="stmt"/>
+      <line num="71" count="1" type="stmt"/>
       <line num="72" count="17" type="stmt"/>
       <line num="73" count="17" type="stmt"/>
-      <line num="74" count="240" type="stmt"/>
-      <line num="77" count="65" type="stmt"/>
-      <line num="79" count="17" type="stmt"/>
-      <line num="80" count="68" type="cond" truecount="2" falsecount="0"/>
-      <line num="81" count="66" type="stmt"/>
-      <line num="84" count="17" type="stmt"/>
-      <line num="87" count="1" type="stmt"/>
-      <line num="89" count="22" type="cond" truecount="2" falsecount="0"/>
-      <line num="90" count="3" type="stmt"/>
-      <line num="93" count="19" type="cond" truecount="2" falsecount="0"/>
+      <line num="75" count="17" type="cond" truecount="2" falsecount="0"/>
+      <line num="76" count="16" type="stmt"/>
+      <line num="77" count="204" type="stmt"/>
+      <line num="80" count="61" type="stmt"/>
+      <line num="82" count="16" type="stmt"/>
+      <line num="83" count="64" type="cond" truecount="2" falsecount="0"/>
+      <line num="84" count="63" type="stmt"/>
+      <line num="87" count="16" type="stmt"/>
+      <line num="90" count="1" type="stmt"/>
       <line num="94" count="1" type="stmt"/>
-      <line num="97" count="18" type="cond" truecount="2" falsecount="0"/>
       <line num="98" count="1" type="stmt"/>
-      <line num="103" count="17" type="cond" truecount="2" falsecount="0"/>
-      <line num="104" count="2" type="stmt"/>
-      <line num="108" count="15" type="stmt"/>
-      <line num="112" count="15" type="stmt"/>
-      <line num="113" count="32" type="stmt"/>
-      <line num="114" count="32" type="stmt"/>
-      <line num="116" count="32" type="cond" truecount="2" falsecount="0"/>
-      <line num="117" count="23" type="stmt"/>
-      <line num="119" count="9" type="stmt"/>
-      <line num="123" count="15" type="stmt"/>
-      <line num="128" count="1" type="stmt"/>
+      <line num="100" count="22" type="cond" truecount="2" falsecount="0"/>
+      <line num="101" count="3" type="stmt"/>
+      <line num="104" count="19" type="cond" truecount="2" falsecount="0"/>
+      <line num="105" count="1" type="stmt"/>
+      <line num="108" count="18" type="cond" truecount="2" falsecount="0"/>
+      <line num="109" count="1" type="stmt"/>
+      <line num="114" count="17" type="cond" truecount="2" falsecount="0"/>
+      <line num="115" count="1" type="stmt"/>
+      <line num="119" count="16" type="stmt"/>
+      <line num="123" count="16" type="stmt"/>
+      <line num="124" count="40" type="stmt"/>
+      <line num="125" count="40" type="stmt"/>
+      <line num="127" count="40" type="cond" truecount="2" falsecount="0"/>
+      <line num="128" count="28" type="stmt"/>
+      <line num="130" count="12" type="stmt"/>
+      <line num="134" count="16" type="stmt"/>
+      <line num="139" count="1" type="stmt"/>
     </file>
     <file name="stringify.js" path="C:\Users\51947\Documents\Laboratoria-Backend\REG003-roman-numerals\src\stringify.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>

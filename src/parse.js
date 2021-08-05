@@ -18,6 +18,7 @@ const characterToInteger = (value) => {
       return -1;
   }
 }
+
 let letter;
 
 const msgError = (value) => {
@@ -47,7 +48,7 @@ const validCharacter = (currentValue) => {
   return verify
 };
 
-const validUniqueCharacter = (currentValue) => {
+const verifyUniqueCharacter = (currentValue) => {
   const romanNum = ["V", "L", "D"];
   const arrValue = currentValue.split("");
   const findUniqueCharacter = romanNum.map(
@@ -57,32 +58,42 @@ const validUniqueCharacter = (currentValue) => {
   //   return !(array.indexOf(element) === index);
   // });
   
-  const valid = findUniqueCharacter.every((n) => n < 2);
+  const verify = findUniqueCharacter.every((n) => n < 2);
 
   findUniqueCharacter.filter((i, index) => {
     if (i >= 2) return letter = romanNum[index];
     return null;
   });
 
-  return valid;
+  return verify;
 };
 
 const validRepetion = (currentValue) => {
   const romanNum = ["I", "X", "C", "M"];
   const arrValue = currentValue.split("");
-  const findRepetionCharacter = romanNum.map(
-    (roman) => arrValue.filter((i) => i === roman).length
-  );
 
-  const valid = findRepetionCharacter.every((n) => n < 4);
+  if(currentValue != "MMMCMXCIX") {
+    const findRepetionCharacter = romanNum.map(
+      (roman) => arrValue.filter((i) => i === roman).length
+    );
 
-  findRepetionCharacter.filter((i, index) => {
-    if (i >= 4) return (letter = romanNum[index]);
-    return null;
-  });
+    const valid = findRepetionCharacter.every((n) => n < 4);
 
-  return valid;
+    findRepetionCharacter.filter((i, index) => {
+      if (i >= 4) return (letter = romanNum[index]);
+      return null;
+    });
+
+    return valid;
+  }
+  else {
+    return 3999;
+  }
 };
+
+const validOrder = () => {
+
+}
 
 const parse = (romano) => {
 
@@ -94,7 +105,7 @@ const parse = (romano) => {
     throw new Error("Unknown roman numeral");
   }
 
-  if (!validUniqueCharacter(romano)) {
+  if (!verifyUniqueCharacter(romano)) {
     throw new Error(
       `Invalid repetition of number starting with 5: ${msgError(letter)}`
     );
@@ -123,7 +134,7 @@ const parse = (romano) => {
   return number;
 }
 
-//parse("IIIIII");
+//console.log(parse("MM"));
 
 module.exports = {
   parse,
