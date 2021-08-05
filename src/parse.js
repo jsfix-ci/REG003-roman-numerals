@@ -42,22 +42,16 @@ const msgError = (value) => {
 
 const validCharacter = (currentValue) => {
   const romanNum = ["I", "V", "X", "L", "C", "D", "M"];
-  const arrValue = currentValue.split("")
   //Comprobar que todos los elementos de un arreglo cumplan una condición
-  const verify = arrValue.every((value) => romanNum.includes(value));
+  const verify = currentValue.every((value) => romanNum.includes(value));
   return verify
 };
 
 const verifyUniqueCharacter = (currentValue) => {
   const romanNum = ["V", "L", "D"];
-  const arrValue = currentValue.split("");
   const findUniqueCharacter = romanNum.map(
-    (roman) => arrValue.filter((i) => i === roman).length
+    (roman) => currentValue.filter((i) => i === roman).length
   );
-  // const verify = findUniqueCharacter.some((element, index, array) => {
-  //   return !(array.indexOf(element) === index);
-  // });
-  
   const verify = findUniqueCharacter.every((n) => n < 2);
 
   findUniqueCharacter.filter((i, index) => {
@@ -70,11 +64,11 @@ const verifyUniqueCharacter = (currentValue) => {
 
 const validRepetion = (currentValue) => {
   const romanNum = ["I", "X", "C", "M"];
-  const arrValue = currentValue.split("");
+  const joinArr = currentValue.join("");
 
-  if(currentValue != "MMMCMXCIX") {
+  if (joinArr != "MMMCMXCIX") {
     const findRepetionCharacter = romanNum.map(
-      (roman) => arrValue.filter((i) => i === roman).length
+      (roman) => currentValue.filter((i) => i === roman).length
     );
 
     const valid = findRepetionCharacter.every((n) => n < 4);
@@ -85,33 +79,57 @@ const validRepetion = (currentValue) => {
     });
 
     return valid;
-  }
-  else {
+  } else {
     return 3999;
   }
 };
 
-const validOrder = () => {
+const validSubstraction = (currentValue) => {
+  const errRomanNum = ["VX", "VL", "VC", "VD", "VM", "LC", "LD", "LM", "DM"];
+  const exist = errRomanNum.map((e) => currentValue.indexOf(e));
+  const valid = exist.every((n) => n < 0);
+  exist.filter((e, index) => {
+    if (e >= 0) letter = errRomanNum[index].charAt(0);
+    return null;
+  });
+  return valid
+}
 
+const validOrder = (currentValue) => {
+  const errRomanNum = ['IIV', 'IIX', 'IL', 'IC', 'ID', 'IM', 'XXL', 'XXC', 'XD', 'XM', 'IVI', 'IXI'];
+  const exist = errRomanNum.map((e) => currentValue.indexOf(e));
+  const valid = exist.every((n) => n < 0);
+  return valid;
 }
 
 const parse = (romano) => {
+
   if (typeof romano != "string") {
     throw new Error("Not a string");
   }
 
-  if (!validCharacter(romano)) {
+  const arrValue = romano.split("");
+
+  if (!validCharacter(arrValue)) {
     throw new Error("Unknown roman numeral");
   }
 
-  if (!verifyUniqueCharacter(romano)) {
+  if (!verifyUniqueCharacter(arrValue)) {
     throw new Error(
       `Invalid repetition of number starting with 5: ${msgError(letter)}`
     );
   }
 
-  if (!validRepetion(romano)) {
+  if (!validRepetion(arrValue)) {
     throw new Error(`Too many repetitions of roman numeral ${letter}`);
+  }
+
+  if (!validSubstraction(romano)) {
+    throw new Error(`Invalid substraction prefix ${letter}`);
+  }
+
+  if(!validOrder(romano)) {
+    throw new Error("Invalid order");
   }
 
 
@@ -133,7 +151,7 @@ const parse = (romano) => {
   return number;
 }
 
-//console.log(parse("MM"));
+// console.log(parse("DLVX"));
 
 module.exports = {
   parse,
