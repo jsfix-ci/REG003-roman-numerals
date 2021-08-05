@@ -56,12 +56,12 @@ describe('parse', () => {
 });
 
 describe('stringify', () => {
-  it.skip('should throw when input not a number', () => {
+  it('should throw when input not a number', () => {
     expect(() => stringify('OMG')).toThrow('Not a number');
     expect(() => stringify([])).toThrow('Not a number');
   });
 
-  it.skip('should throw when input out of range', () => {
+  it('should throw when input out of range', () => {
     expect(() => stringify(-1)).toThrow('out of range');
     expect(() => stringify(4000)).toThrow('out of range');
   });

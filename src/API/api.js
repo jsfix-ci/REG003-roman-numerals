@@ -34,3 +34,13 @@ module.exports.parse = (roman) => {
   }
   return letterConvertion(arrayRomans);
 };
+
+module.exports.stringify = (arabigo) => {
+  if (typeof arabigo !== 'number') {
+    throw new Error('Not a number');
+  }
+
+  if (arabigo <= 0 || arabigo >= 4000) {
+    throw new Error('out of range');
+  }
+};
