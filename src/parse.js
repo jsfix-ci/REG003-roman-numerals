@@ -84,8 +84,13 @@ const validRepetion = (currentValue) => {
   return valid;
 };
 
-const parse = (romano) => {
+const isValidCharacter = (arrayLetters) => {
+  const romans = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
+  const isFound = arrayLetters.every((e) => romans.includes(e));
+  return isFound;
+};
 
+const parse = (romano) => {
   if (typeof romano != "string") {
     throw new Error("Not a string");
   }
