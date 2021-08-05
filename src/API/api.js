@@ -8,6 +8,7 @@ const {
   isValidPosition,
   letterConvertion,
 } = require('./roman');
+const { convertRoman } = require('./arabigo');
 
 module.exports.parse = (roman) => {
   if (typeof roman !== 'string') {
@@ -43,4 +44,6 @@ module.exports.stringify = (arabigo) => {
   if (arabigo <= 0 || arabigo >= 4000) {
     throw new Error('out of range');
   }
+
+  return convertRoman(arabigo);
 };
