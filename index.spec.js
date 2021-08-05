@@ -49,7 +49,7 @@ describe('parse', () => {
   });
 
   testValues.forEach(([expected, input]) => {
-    it.skip(`should return ${expected} when input is ${input}`, () => {
+    it(`should return ${expected} when input is ${input}`, () => {
       expect(parse(input)).toBe(expected);
     });
   });
