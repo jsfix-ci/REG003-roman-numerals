@@ -67,7 +67,7 @@ describe('stringify', () => {
   });
 
   testValues.forEach(([input, expected]) => {
-    it.skip(`should return ${expected} when input is ${input}`, () => {
+    it(`should return ${expected} when input is ${input}`, () => {
       expect(stringify(input)).toBe(expected);
     });
   });
