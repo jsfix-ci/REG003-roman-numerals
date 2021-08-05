@@ -43,7 +43,7 @@ describe("parse", () => {
 
   it("should throw when invalid substraction prefix (must be 1 or multiple of 10)", () => {
     expect(() => parse("VX")).toThrow("Invalid substraction prefix V");
-  });
+  }); 
 
   it("should throw when wrong order", () => {
     expect(() => parse("LXIIIX")).toThrow("Invalid order");

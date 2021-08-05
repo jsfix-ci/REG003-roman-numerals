@@ -151,8 +151,6 @@ const parse = (romano) => {
   return number;
 }
 
-// console.log(parse("DLVX"));
-
 module.exports = {
   parse,
 }
