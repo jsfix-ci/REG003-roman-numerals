@@ -1,15 +1,88 @@
 const characterToInteger = (value) => {
   switch (value) {
-    case 'I': return 1;
-    case 'V': return 5;
-    case 'X': return 10;
-    case 'L': return 50;
-    case 'C': return 100;
-    case 'D': return 500;
-    case 'M': return 1000;
-    default: return -1;
+    case "I": //puede aparecer tres veces en un número
+      return 1;
+    case "V": 
+      return 5;
+    case "X": //puede aparecer tres veces en un número
+      return 10;
+    case "L": 
+      return 50;
+    case "C": //puede aparecer tres veces en un número
+      return 100;
+    case "D": 
+      return 500;
+    case "M": //puede aparecer tres veces en un número
+      return 1000;
+    default:
+      return -1;
   }
 }
+let letter;
+
+const msgError = (value) => {
+  let msg;
+  switch (value) {
+    case "V":
+      msg = "V (5)";
+    break
+    case "L":
+      msg = "L (50)";
+    break
+    case "D":
+      msg = "D (500)";
+    break
+    default:
+      break;
+  }
+  return msg; 
+}
+
+
+const validCharacter = (currentValue) => {
+  const romanNum = ["I", "V", "X", "L", "C", "D", "M"];
+  const arrValue = currentValue.split("")
+  //Comprobar que todos los elementos de un arreglo cumplan una condición
+  const verify = arrValue.every((value) => romanNum.includes(value));
+  return verify
+};
+
+const validUniqueCharacter = (currentValue) => {
+  const romanNum = ["V", "L", "D"];
+  const arrValue = currentValue.split("");
+  const findUniqueCharacter = romanNum.map(
+    (roman) => arrValue.filter((i) => i === roman).length
+  );
+  // const verify = findUniqueCharacter.some((element, index, array) => {
+  //   return !(array.indexOf(element) === index);
+  // });
+  
+  const valid = findUniqueCharacter.every((n) => n < 2);
+
+  findUniqueCharacter.filter((i, index) => {
+    if (i >= 2) return letter = romanNum[index];
+    return null;
+  });
+
+  return valid;
+};
+
+const validRepetion = (currentValue) => {
+  const romanNum = ["I", "X", "C", "M"];
+  const arrValue = currentValue.split("");
+  const findRepetionCharacter = romanNum.map(
+    (roman) => arrValue.filter((i) => i === roman).length
+  );
+
+  const valid = findRepetionCharacter.every((n) => n < 4);
+
+  findRepetionCharacter.filter((i, index) => {
+    if (i >= 4) return (letter = romanNum[index]);
+    return null;
+  });
+
+  return valid;
+};
 
 const isValidCharacter = (arrayLetters) => {
   const romans = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
@@ -18,26 +91,24 @@ const isValidCharacter = (arrayLetters) => {
 };
 
 const parse = (romano) => {
-  if (typeof romano !== 'string') {
-    throw new Error('Not a string');
+  if (typeof romano != "string") {
+    throw new Error("Not a string");
   }
 
-  // if (isValidCharacter(romano)) {
-  //   const arrayLetters = romano.split('');
-  //   const integer = arrayLetters.reduce((acc, e) => {
-  //     const current = characterToInteger(e);
-  //     const previous = characterToInteger(acc[acc.length - 1]);
-  //     if (current > previous) {
-  //       return acc + current;
-  //     } else {
-  //       return acc - current;
-  //     }
-  //   }, 0);
-  //   return integer;
-
-  if (!isValidCharacter([romano])) {
-    throw new Error('Unknown roman numeral');
+  if (!validCharacter(romano)) {
+    throw new Error("Unknown roman numeral");
   }
+
+  if (!validUniqueCharacter(romano)) {
+    throw new Error(
+      `Invalid repetition of number starting with 5: ${msgError(letter)}`
+    );
+  }
+
+  if (!validRepetion(romano)) {
+    throw new Error(`Too many repetitions of roman numeral ${letter}`);
+  }
+
 
   let number = characterToInteger(romano.charAt(0));
   let anterior;
@@ -57,8 +128,7 @@ const parse = (romano) => {
   return number;
 }
 
-// console.log(parse("G"));
-
+//parse("IIIIII");
 
 module.exports = {
   parse,
