@@ -96,7 +96,6 @@ const validOrder = () => {
 }
 
 const parse = (romano) => {
-
   if (typeof romano != "string") {
     throw new Error("Not a string");
   }
@@ -138,4 +137,4 @@ const parse = (romano) => {
 
 module.exports = {
   parse,
-};
+}
