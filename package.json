@@ -2,9 +2,32 @@
   "name": "roman-numerals",
   "version": "1.0.0",
   "scripts": {
-    "test": "jest"
+    "test": "jest --verbose --coverage",
+    "start": "node app.js"
   },
   "devDependencies": {
     "jest": "^27.0.6"
+  },
+  "description": "## Índice",
+  "main": "index.js",
+  "bin": {
+    "roman-numerals": "cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Afernandezc435/REG003-roman-numerals.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Afernandezc435/REG003-roman-numerals/issues"
+  },
+  "homepage": "https://github.com/Afernandezc435/REG003-roman-numerals#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^8.1.0",
+    "figlet": "^1.5.0",
+    "prompt": "^1.1.0"
   }
 }
