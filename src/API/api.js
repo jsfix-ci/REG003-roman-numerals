@@ -59,7 +59,7 @@ const isValidSubstraction = (roman) => {
 };
 
 const isValidPosition = (roman) => {
-  const romans = ['IIV', 'IIX', 'IL', 'IC', 'ID', 'IM', 'XXL', 'XXC', 'XD', 'XM'];
+  const romans = ['IVI', 'IIV', 'IXI', 'IIX', 'IL', 'IC', 'ID', 'IM', 'XLX', 'XXL', 'XCX', 'XXC', 'XD', 'XM'];
   const exist = romans.map((e) => roman.indexOf(e));
   const valid = exist.every((n) => n < 0);
   return valid;
