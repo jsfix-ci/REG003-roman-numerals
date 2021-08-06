@@ -10,13 +10,13 @@
     "type": "git",
     "url": "https://github.com/Briss302/REG003-roman-numerals.git"
   },
+  "author": " Soni Sayago Salazar & Briceyda Diaz Quispe",
   "keywords": [
     "cli"
   ],
   "license": "MIT",
   "bin": {
-    "roman-numerals": "./bin/cli.js",
-    "parse": "./bin/parse.js"
+    "roman-numerals": "./bin/cli.js"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
