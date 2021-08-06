@@ -1,3 +1,7 @@
-const { parse } = require("./src/parse");
-const { stringify } = require("./src/stringify");
+const { parse } = require("./src/parse.js");
+const { stringify } = require("./src/stringify.js");
 
+module.exports = {
+  parse,
+  stringify,
+};

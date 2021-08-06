@@ -15,7 +15,7 @@ const characterToInteger = (value) => {
     case "M": //puede aparecer tres veces en un número
       return 1000;
     default:
-      return -1;
+      return "Ingrese un valor";
   }
 }
 
