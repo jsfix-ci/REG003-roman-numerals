@@ -9,7 +9,11 @@ program
   .arguments('<string>')
   .description('Converts a Roman number to Arabic, only receives elements of type string')
   .action((name) => {
-    console.log(convertParse(name));
+    try {
+      console.log(convertParse(name));
+    } catch (error) {
+      console.log(error.message);
+    }
   });
 
 program
@@ -17,6 +21,10 @@ program
   .arguments('<number>')
   .description('Converts a Arabic number to Roman, only receives elements of type number')
   .action((name) => {
-    console.log(stringify(+name));
+    try {
+      console.log(stringify(+name));
+    } catch (error) {
+      console.log(error.message);
+    }
   });
 program.parse(process.argv);
