@@ -1,4 +1,4 @@
-const { parse, stringify } = require('./');
+const { parse, stringify } = require('./src/API/api');
 
 const testValues = [
   [1, 'I'],
@@ -26,6 +26,10 @@ describe('parse', () => {
 
   it('should throw when bad chars', () => {
     expect(() => parse('IG')).toThrow('Unknown roman numeral');
+  });
+
+  it('should not throw when receive lower cases chars', () => {
+    expect(() => parse('i')).toBeDefined();
   });
 
   it('should throw when repetitions of number starting with 5', () => {
