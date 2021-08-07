@@ -1,7 +1,5 @@
 #!/usr/bin/env node
-//
-const { parse } = require("../src/parse");
-const { stringify } = require("../src/stringify")
+const { parse, stringify } = require("../index");
 // Librería nos ayuda a imprimir en color en la terminal
 const chalk = require("chalk");
 // Librería para crear banners con caracteres y símbolos
@@ -14,15 +12,19 @@ const args = process.argv;
 
 // Mostrar un banner con un mensaje formado por caracteres.
 const msn = msn => {
-  console.log(chalk.bold.cyan(figlet.textSync(msn, {
-    font: 'ANSI Shadow',
-    horizontalLayout: 'default',
-    verticalLayout: 'default'
-  })));
+  console.log(
+    chalk.bold.yellow(
+      figlet.textSync(msn, {
+        font: "ANSI Shadow",
+        horizontalLayout: "fitted",
+        verticalLayout: "fitted",
+      })
+    )
+  );
 }
 // IIFE (Immediately Invoked Function Expression)
 (async () => {
-  msn('Roman Numerals - CLI');
+  msn('Roman Numerals');
 })();
 
 program
@@ -31,9 +33,9 @@ program
   .description("Converts a roman number to arabic, only receives elements of type string.")
   .action((name) => {
     try{
-      console.log(parse(name))
+      console.log(chalk.bold.green(parse(name)));
     } catch(error) {
-      console.log(error.message)
+      console.log(chalk.bold.red(error.message));
     }
     
   });
@@ -46,9 +48,9 @@ program
   )
   .action((name) => {
     try {
-      console.log(stringify(+name));
+      console.log(chalk.bold.green(stringify(+name)));
     } catch (error) {
-      console.log(error.message);
+      console.log(chalk.bold.red(error.message));
     }
   });
 program.parse(args);
