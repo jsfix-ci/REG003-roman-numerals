@@ -15,7 +15,7 @@ const characterToInteger = (value) => {
     case "M": //puede aparecer tres veces en un número
       return 1000;
     default:
-      return -1;
+      return "Ingrese un valor";
   }
 }
 
@@ -150,8 +150,6 @@ const parse = (romano) => {
 
   return number;
 }
-
-// console.log(parse("DLVX"));
 
 module.exports = {
   parse,
