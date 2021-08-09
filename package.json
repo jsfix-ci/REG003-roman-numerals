@@ -12,7 +12,7 @@
     "jest": "^27.0.6"
   },
   "description": "Módulo de JavaScript (instalable via npm) que permita al usuario converir números arábigos en números romanos y viceversa.",
-  "main": "index.js",
+  "main": "src/API/api.js",
   "bin": {
     "roman-numerals": "src/CLI/cli.js"
   },
