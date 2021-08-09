@@ -4,7 +4,7 @@
   "description": "Desarrollo de una API para convertir números arábigos en números romanos y viceversa",
   "scripts": {
     "test": "jest --verbose --coverage",
-    "start": "nodemon src/parse.js"
+    "start": "nodemon babel-node src/parse.js"
   },
   "repository": {
     "type": "git",
@@ -19,10 +19,16 @@
     "roman-numerals": "./bin/cli.js"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.15.0",
     "eslint": "^7.32.0",
+    "express": "^4.17.1",
     "jest": "^27.0.6"
   },
   "dependencies": {
+    "babel-install": "^2.1.0",
     "chalk": "^4.1.2",
     "commander": "^8.1.0",
     "figlet": "^1.5.0",
