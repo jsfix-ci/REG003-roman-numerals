@@ -1,4 +1,5 @@
-const { parse, stringify } = require("./index");
+const {parse} = require("./src/parse");
+const {stringify} = require("./src/stringify")
 
 const getValueRoman = document.getElementById("roman").value;
 const getValueArabigo = document.getElementById("arabigo").value;

@@ -102,7 +102,7 @@ const validOrder = (currentValue) => {
   return valid;
 }
 
-export const parse = (romano) => {
+const parse = (romano) => {
 
   if (typeof romano != "string") {
     throw new Error("Not a string");
@@ -150,3 +150,7 @@ export const parse = (romano) => {
 
   return number;
 }
+
+module.exports = {
+  parse,
+};
