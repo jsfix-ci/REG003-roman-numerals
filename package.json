@@ -11,7 +11,7 @@
   "description": "## Índice",
   "main": "index.js",
   "bin": {
-    "roman-numerals": "cli.js"
+    "roman-numerals": "bin/cli.js"
   },
   "repository": {
     "type": "git",
