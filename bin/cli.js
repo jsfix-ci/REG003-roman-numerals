@@ -13,8 +13,24 @@ Options:
 
 const [, , ...args] = process.argv;
 if (args.length === 1) {
-  if (args[0] === '-h') {
-    console.log(help);
+  switch (args[0]) {
+    case '-h':
+    case '--help':
+    case 'help':
+      console.log(help);
+      break;
+    case '-v':
+    case '--version':
+    case 'version':
+      let pack = require('../package.json');
+      console.log('version ' + pack.version);
+      break;
+    case 'parse':
+    case 'stringify':
+      console.log(args[0] + ' input required');
+      break;
+    default:
+      console.log('invalid option');
   }
 } else if (args.length === 2) {
   const parseOrStringify = args[0];
